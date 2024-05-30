@@ -1511,7 +1511,7 @@ def image_generation(
 
     image_list: List = []
     for artifact in response_body["artifacts"]:
-        image_dict = {"url": artifact["base64"]}
+        image_dict = [{"url": artifact["base64"]}]
+        model_response.data += image_dict
 
-    model_response.data = image_dict
     return model_response
